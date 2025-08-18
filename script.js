@@ -47,14 +47,49 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function ({
+    time = '20:00',
+    starterIndex = 0,
+    mainIndex = 0,
+    address,
+  }) {
+    console.log(
+      `${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} are going to be delivered at ${address}  on ${time}`
+    );
+  },
 };
 
-let [main, secondary] = restaurant.order(2, 1);
+//Destructuring Objects
 
-console.log(main, secondary);
-const temp = main;
-main = secondary;
-secondary = temp;
+restaurant.orderDelivery({
+  time: '10:00',
+  starterIndex: 2,
+  mainIndex: 2,
+  address: 'awadh colony, nilmatha',
+});
+
+// const { name, categories, openingHours } = restaurant;
+// console.log(name, categories, openingHours);
+
+// const { name: restaurantName, openingHours: hours } = restaurant;
+// console.log(restaurantName, hours);
+
+// const { menu = [], starterMenu: starter = [] } = restaurant;
+// console.log(menu, starter);
+
+// const {
+//   fri: { open: o, close: c },
+// } = openingHours;
+// console.log(o, c);
+
+//Destructuring Array
+
+// let [main, secondary] = restaurant.order(2, 1);
+
+// console.log(main, secondary);
+// const temp = main;
+// main = secondary;
+// secondary = temp;
 
 // const arr = [4, 7, 9];
 
