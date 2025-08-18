@@ -44,4 +44,32 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
+
+let [main, secondary] = restaurant.order(2, 1);
+
+console.log(main, secondary);
+const temp = main;
+main = secondary;
+secondary = temp;
+
+// const arr = [4, 7, 9];
+
+// const [a, , b] = arr;
+// console.log(a, b);
+
+// let [main, secondary] = [a, b];
+// console.log(main, secondary);
+
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+// const arr2 = [27, 15, [6, 26]];
+
+// const [i, , [j, k]] = arr2;
+// console.log(i, j, k);
