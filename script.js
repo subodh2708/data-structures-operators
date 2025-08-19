@@ -60,7 +60,38 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`here is your pasta with ${ing1},${ing2},${ing3}`);
   },
+  orderPizza: function (mainIngredients, ...otherIngredients) {
+    console.log(mainIngredients, otherIngredients);
+  },
 };
+
+//rest operator
+
+const arr = [1, 2, 3, 4, 5];
+const [a, b, ...others] = arr;
+console.log(a, b, others);
+
+const [pizza, , Risotto, ...otherfoods] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, Risotto, otherfoods);
+
+//Object
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+//function
+
+const add = function (...numbers) {
+  console.log(numbers);
+};
+
+const x = [2, 3, 4];
+add(...x);
+
+restaurant.orderPizza('tomato', 'onion', 'lettuce', 'capsicum');
 
 //Spread Operator
 
