@@ -57,16 +57,51 @@ const restaurant = {
       `${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} are going to be delivered at ${address}  on ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`here is your pasta with ${ing1},${ing2},${ing3}`);
+  },
 };
+
+//Spread Operator
+
+// const arr = [7, 9, 10];
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// const newMainMenu = [...restaurant.mainMenu, 'butter paneer'];
+// console.log(newMainMenu);
+
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+// const completeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(completeMenu);
+
+// const ingredients = [
+//   prompt('what ingredients do you need?ing 1'),
+//   prompt('Ing 2?'),
+//   prompt('Ing 3?'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// restaurant.orderPasta(...ingredients);
+
+// const newResturant = { ...restaurant, name: 'soulchef' };
+// console.log(newResturant);
+// newResturant.location = 'pearl apartment, gwalior';
+// console.log(newResturant);
+// console.log(restaurant);
 
 //Destructuring Objects
 
-restaurant.orderDelivery({
-  time: '10:00',
-  starterIndex: 2,
-  mainIndex: 2,
-  address: 'awadh colony, nilmatha',
-});
+// restaurant.orderDelivery({
+//   time: '10:00',
+//   starterIndex: 2,
+//   mainIndex: 2,
+//   address: 'awadh colony, nilmatha',
+// });
 
 // const { name, categories, openingHours } = restaurant;
 // console.log(name, categories, openingHours);
