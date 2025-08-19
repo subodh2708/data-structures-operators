@@ -64,7 +64,16 @@ const restaurant = {
     console.log(mainIngredients, otherIngredients);
   },
 };
+// Nulish coalesing Operator
 
+restaurant.numGuest = 0;
+const guest1 = restaurant.numGuest || 10;
+const guest2 = restaurant.numGuest ?? 10;
+console.log(guest1);
+console.log(guest2);
+console.log(restaurant);
+
+/*
 //short circuiting(|| and &&)
 
 console.log(3 || 'subodh');
@@ -83,112 +92,119 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('tomato', 'red peprika');
 
+
+
+
+
+
+
 //rest operator
 
-// const arr = [1, 2, 3, 4, 5];
-// const [a, b, ...others] = arr;
-// console.log(a, b, others);
+const arr = [1, 2, 3, 4, 5];
+const [a, b, ...others] = arr;
+console.log(a, b, others);
 
-// const [pizza, , Risotto, ...otherfoods] = [
-//   ...restaurant.mainMenu,
-//   ...restaurant.starterMenu,
-// ];
-// console.log(pizza, Risotto, otherfoods);
+const [pizza, , Risotto, ...otherfoods] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, Risotto, otherfoods);
 
-// //Object
+//Object
 
-// const { sat, ...weekdays } = restaurant.openingHours;
-// console.log(sat, weekdays);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
 
-// //function
+//function
 
-// const add = function (...numbers) {
-//   console.log(numbers);
-// };
+const add = function (...numbers) {
+  console.log(numbers);
+};
 
-// const x = [2, 3, 4];
-// add(...x);
+const x = [2, 3, 4];
+add(...x);
 
-// restaurant.orderPizza('tomato', 'onion', 'lettuce', 'capsicum');
+restaurant.orderPizza('tomato', 'onion', 'lettuce', 'capsicum');
 
 //Spread Operator
 
-// const arr = [7, 9, 10];
-// const newArr = [1, 2, ...arr];
-// console.log(newArr);
+const arr = [7, 9, 10];
+const newArr = [1, 2, ...arr];
+console.log(newArr);
 
-// const newMainMenu = [...restaurant.mainMenu, 'butter paneer'];
-// console.log(newMainMenu);
+const newMainMenu = [...restaurant.mainMenu, 'butter paneer'];
+console.log(newMainMenu);
 
-// const mainMenuCopy = [...restaurant.mainMenu];
-// console.log(mainMenuCopy);
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
 
-// const completeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-// console.log(completeMenu);
+const completeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(completeMenu);
 
-// const ingredients = [
-//   prompt('what ingredients do you need?ing 1'),
-//   prompt('Ing 2?'),
-//   prompt('Ing 3?'),
-// ];
-// console.log(ingredients);
+const ingredients = [
+  prompt('what ingredients do you need?ing 1'),
+  prompt('Ing 2?'),
+  prompt('Ing 3?'),
+];
+console.log(ingredients);
 
-// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 
-// restaurant.orderPasta(...ingredients);
+restaurant.orderPasta(...ingredients);
 
-// const newResturant = { ...restaurant, name: 'soulchef' };
-// console.log(newResturant);
-// newResturant.location = 'pearl apartment, gwalior';
-// console.log(newResturant);
-// console.log(restaurant);
+const newResturant = { ...restaurant, name: 'soulchef' };
+console.log(newResturant);
+newResturant.location = 'pearl apartment, gwalior';
+console.log(newResturant);
+console.log(restaurant);
 
 //Destructuring Objects
 
-// restaurant.orderDelivery({
-//   time: '10:00',
-//   starterIndex: 2,
-//   mainIndex: 2,
-//   address: 'awadh colony, nilmatha',
-// });
+restaurant.orderDelivery({
+  time: '10:00',
+  starterIndex: 2,
+  mainIndex: 2,
+  address: 'awadh colony, nilmatha',
+});
 
-// const { name, categories, openingHours } = restaurant;
-// console.log(name, categories, openingHours);
+const { name, categories, openingHours } = restaurant;
+console.log(name, categories, openingHours);
 
-// const { name: restaurantName, openingHours: hours } = restaurant;
-// console.log(restaurantName, hours);
+const { name: restaurantName, openingHours: hours } = restaurant;
+console.log(restaurantName, hours);
 
-// const { menu = [], starterMenu: starter = [] } = restaurant;
-// console.log(menu, starter);
+const { menu = [], starterMenu: starter = [] } = restaurant;
+console.log(menu, starter);
 
-// const {
-//   fri: { open: o, close: c },
-// } = openingHours;
-// console.log(o, c);
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
 
 //Destructuring Array
 
-// let [main, secondary] = restaurant.order(2, 1);
+let [main, secondary] = restaurant.order(2, 1);
 
-// console.log(main, secondary);
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+console.log(main, secondary);
+const temp = main;
+main = secondary;
+secondary = temp;
 
-// const arr = [4, 7, 9];
+const arr = [4, 7, 9];
 
-// const [a, , b] = arr;
-// console.log(a, b);
+const [a, , b] = arr;
+console.log(a, b);
 
-// let [main, secondary] = [a, b];
-// console.log(main, secondary);
+let [main, secondary] = [a, b];
+console.log(main, secondary);
 
-// const temp = main;
-// main = secondary;
-// secondary = temp;
-// console.log(main, secondary);
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
 
-// const arr2 = [27, 15, [6, 26]];
+const arr2 = [27, 15, [6, 26]];
 
-// const [i, , [j, k]] = arr2;
-// console.log(i, j, k);
+const [i, , [j, k]] = arr2;
+console.log(i, j, k);
+*/
