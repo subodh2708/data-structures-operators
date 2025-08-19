@@ -65,33 +65,51 @@ const restaurant = {
   },
 };
 
+//short circuiting(|| and &&)
+
+console.log(3 || 'subodh');
+console.log('' || 'subodh');
+console.log('' || undefined || null || 'hello');
+
+restaurant.numGuest = 0;
+
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(restaurant.numGuest);
+console.log(guest1);
+
+if (restaurant.orderPizza) {
+  console.log(restaurant.orderPizza('tomato', 'onion', 'capsicum'));
+}
+
+restaurant.orderPizza && restaurant.orderPizza('tomato', 'red peprika');
+
 //rest operator
 
-const arr = [1, 2, 3, 4, 5];
-const [a, b, ...others] = arr;
-console.log(a, b, others);
+// const arr = [1, 2, 3, 4, 5];
+// const [a, b, ...others] = arr;
+// console.log(a, b, others);
 
-const [pizza, , Risotto, ...otherfoods] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, Risotto, otherfoods);
+// const [pizza, , Risotto, ...otherfoods] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, Risotto, otherfoods);
 
-//Object
+// //Object
 
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(sat, weekdays);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(sat, weekdays);
 
-//function
+// //function
 
-const add = function (...numbers) {
-  console.log(numbers);
-};
+// const add = function (...numbers) {
+//   console.log(numbers);
+// };
 
-const x = [2, 3, 4];
-add(...x);
+// const x = [2, 3, 4];
+// add(...x);
 
-restaurant.orderPizza('tomato', 'onion', 'lettuce', 'capsicum');
+// restaurant.orderPizza('tomato', 'onion', 'lettuce', 'capsicum');
 
 //Spread Operator
 
