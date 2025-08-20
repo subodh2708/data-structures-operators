@@ -24,10 +24,10 @@ const mexicanFoods = new Set([
 
 // Data needed for first part of the section
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
-  [weekdays[3]]: {
+  [days[3]]: {
     open: 12,
     close: 22,
   },
@@ -35,7 +35,7 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day-${2 + 4}`]: {
+  sat: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -65,11 +65,23 @@ const restaurant = {
   },
 };
 
+//Optional chaining
+
+for (const day of days) console.log(day);
+
+console.log(restaurant.openingHours?.mon?.open);
+
+//methods
+
+console.log(restaurant.order?.(0, 1));
+console.log(restaurant.orderPaneer?.(0, 1) ?? 'method does not exist');
+
+/*
 //advanced object literals
 
 console.log(restaurant.openingHours);
 
-/*
+
 //For-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
