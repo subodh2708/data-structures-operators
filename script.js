@@ -65,6 +65,31 @@ const restaurant = {
   },
 };
 
+//Looping Objects
+
+console.log(openingHours);
+console.log(Object.keys(openingHours));
+
+let str = `We are open on `;
+for (const day of Object.keys(openingHours)) {
+  if (day === 'fri' || day === 'thu') {
+    str += `${day}, `;
+  } else if (day === 'sat') {
+    str += `${day}.`;
+  }
+}
+console.log(str);
+
+console.log(Object.values(openingHours));
+console.log(Object.entries(openingHours));
+
+for (const [key, { open, close }] of Object.entries(openingHours)) {
+  console.log(
+    `We are open on ${key} from  ${open}:00 hours and closes at ${close}:00 hours. `
+  );
+}
+
+/*
 //Optional chaining
 
 for (const day of days) console.log(day);
@@ -76,7 +101,7 @@ console.log(restaurant.openingHours?.mon?.open);
 console.log(restaurant.order?.(0, 1));
 console.log(restaurant.orderPaneer?.(0, 1) ?? 'method does not exist');
 
-/*
+
 //advanced object literals
 
 console.log(restaurant.openingHours);
