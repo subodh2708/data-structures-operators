@@ -65,6 +65,21 @@ const restaurant = {
   },
 };
 
+//Sets
+
+const orderSet = new Set(['pizza', 'pasta', 'pizza', 'noodles', 'pasta']);
+console.log(orderSet.size);
+console.log(orderSet.has('pizza'));
+console.log(orderSet.add('butter chicken'));
+console.log(orderSet.delete('noodles'));
+console.log(orderSet);
+
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef'];
+
+const staffUnique = new Set(staff);
+console.log([...staffUnique]);
+
+/*
 //Looping Objects
 
 console.log(openingHours);
