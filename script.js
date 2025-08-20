@@ -23,48 +23,53 @@ const mexicanFoods = new Set([
 ]);
 
 // Data needed for first part of the section
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours,
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery: function ({
-    time = '20:00',
-    starterIndex = 0,
-    mainIndex = 0,
-    address,
-  }) {
+  orderDelivery({ time = '20:00', starterIndex = 0, mainIndex = 0, address }) {
     console.log(
       `${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} are going to be delivered at ${address}  on ${time}`
     );
   },
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`here is your pasta with ${ing1},${ing2},${ing3}`);
   },
-  orderPizza: function (mainIngredients, ...otherIngredients) {
+  orderPizza(mainIngredients, ...otherIngredients) {
     console.log(mainIngredients, otherIngredients);
   },
 };
 
+//advanced object literals
+
+console.log(restaurant.openingHours);
+
+/*
 //For-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
@@ -75,7 +80,7 @@ for (let i = 0; i < menu.length; i++) {
 
 for (const [i, el] of menu.entries()) console.log(i + 1, el);
 
-/*
+
 // Logical assignment Operators
 
 const rest1 = {
