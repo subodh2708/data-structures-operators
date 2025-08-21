@@ -65,6 +65,25 @@ const mexicanFoods = new Set([
   'garlic',
 ]);
 
+//Map
+
+const rest = new Map();
+console.log(
+  rest
+    .set('name', 'Soul Chef')
+    .set(1, 'gwalior')
+    .set(2, 'lucknow')
+    .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+    .set('open', 11)
+    .set('close', 23)
+    .set(true, 'We are open.')
+    .set(false, 'We are closed')
+);
+
+console.log(rest.get('categories'));
+console.log(rest.has('categories'));
+
+/*
 //SET METHODS
 
 const commonFoods = italianFoods.intersection(mexicanFoods);
@@ -78,7 +97,7 @@ console.log([...new Set([...italianFoods, ...mexicanFoods])]);
 const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
 console.log(uniqueItalianFoods);
 
-/*
+
 //Sets
 
 const orderSet = new Set(['pizza', 'pasta', 'pizza', 'noodles', 'pasta']);
