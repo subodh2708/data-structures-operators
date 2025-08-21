@@ -67,21 +67,59 @@ const mexicanFoods = new Set([
 
 //Map
 
-const rest = new Map();
-console.log(
-  rest
-    .set('name', 'Soul Chef')
-    .set(1, 'gwalior')
-    .set(2, 'lucknow')
-    .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-    .set('open', 11)
-    .set('close', 23)
-    .set(true, 'We are open.')
-    .set(false, 'We are closed')
-);
+// const rest = new Map();
+// console.log(
+//   rest
+//     .set('name', 'Soul Chef')
+//     .set(1, 'gwalior')
+//     .set(2, 'lucknow')
+//     .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//     .set('open', 11)
+//     .set('close', 23)
+//     .set(true, 'We are open.')
+//     .set(false, 'We are closed')
+// );
 
-console.log(rest.get('categories'));
-console.log(rest.has('categories'));
+// console.log(rest.get('categories'));
+// console.log(rest.has('categories'));
+
+//Maps:Iteration
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Python'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'Correct🎉'],
+  [false, 'Try Again!'],
+]);
+
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`${key} :  ${value}`);
+}
+
+// const answer = Number(prompt('Give your answer'));
+const answer = 3;
+console.log(answer);
+
+// if (answer === 3) {
+//   console.log(question.get(true));
+// } else {
+//   console.log(question.get(false));
+// }
+
+console.log(question.get(question.get('correct') === answer));
+
+//convert object ot maps
+
+console.log(new Map(Object.entries(openingHours)));
+
+//convert Maps to Arrays
+
+console.log([...question]);
 
 /*
 //SET METHODS
