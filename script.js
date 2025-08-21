@@ -1,5 +1,9 @@
 'use strict';
 
+// git add .
+// git commit -m "practice Strings part 1"
+// git push
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -65,6 +69,70 @@ const mexicanFoods = new Set([
   'garlic',
 ]);
 
+//Strings
+
+const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+
+console.log(airline.indexOf('A'));
+console.log(airline.lastIndexOf('A'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('r'));
+console.log(airline.length);
+console.log(airline.slice(8));
+console.log(airline.slice(3, 7));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('you got middle seat');
+  } else {
+    console.log('you got lucky');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('2c');
+checkMiddleSeat('27E');
+
+//fix Capitalisation in name
+const passanger = 'jOnAS'; // jonas
+const passangerLower = passanger.toLowerCase();
+const passangerCorrect =
+  passangerLower[0].toUpperCase() + passangerLower.slice(1);
+
+console.log(passangerCorrect);
+
+//comparing email
+
+const email = 'hello@jonas.io';
+const loginEmail = '    Hello@Jonas.io  \n';
+
+const emailCorrect = loginEmail.toLowerCase().trim();
+console.log(emailCorrect);
+console.log(email === emailCorrect);
+
+//replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passangers come to boarding door 23, boarding door 23!';
+
+console.log(announcement.replaceAll('door', 'gate'));
+
+//Boolean
+
+const plane = 'A320';
+console.log(plane.includes('320'));
+console.log(plane.startsWith('A3'));
+
+/*
 //Map
 
 // const rest = new Map();
