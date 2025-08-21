@@ -1,7 +1,7 @@
 'use strict';
 
 // git add .
-// git commit -m "practice Strings part 1"
+// git commit -m "practice Strings part 2"
 // git push
 
 // Data needed for a later exercise
@@ -69,7 +69,63 @@ const mexicanFoods = new Set([
   'garlic',
 ]);
 
-//Strings
+//Strings : part 2
+
+//split and join
+
+console.log('Subodh Singh'.split(' '));
+
+const [firstName, lastName] = 'subodh singh'.split(' ');
+console.log(firstName, lastName);
+
+const newName = ['Mrs', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitaliseName = function (name) {
+  const names = name.toLowerCase().split(' ');
+
+  const str = [];
+  for (const n of names) {
+    str.push(n[0].toUpperCase() + n.slice(1));
+  }
+  const capitalize = str.join(' ');
+  console.log(capitalize);
+};
+
+capitaliseName('jessica ann smith davis');
+capitaliseName('subodh kumar singh');
+
+//padding
+
+const message = 'go to gate 23';
+console.log(message.padStart(25, '+'));
+console.log('subodh'.padStart(10, '*').padEnd(20, '*'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(4784648784165745));
+console.log(maskCreditCard('256564461315488875'));
+
+//repeat
+
+const message2 = 'Bad weather... all flights delayed...';
+console.log(message2.repeat(5));
+
+const planeInLine = function (n) {
+  console.log(`there are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+
+planeInLine(3);
+planeInLine(6);
+planeInLine(10);
+
+/*
+//Strings : part 1
 
 const airline = 'TAP Air Portugal';
 // const plane = 'A320';
